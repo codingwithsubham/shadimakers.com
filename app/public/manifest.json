@@ -1,0 +1,32 @@
+{
+  "short_name": "Shadimakers",
+  "name": "Shadimakers.com",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "500x500",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "500x500"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "screenshots": [{
+    "src": "logo.png",
+    "type": "image/png",
+    "sizes": "400x400",
+    "form_factor": "wide"
+  },
+  {
+    "src": "logo.png",
+    "type": "image/png",
+    "sizes": "400x400",
+    "form_factor": "narrow"
+  }]
+}

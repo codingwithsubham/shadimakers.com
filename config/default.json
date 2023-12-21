@@ -1,0 +1,4 @@
+{
+  "jwtSecret": "my-jwt-secret-key@321",
+  "mongo:uri": "mongodb+srv://admin:kyNflmemeGk8pVnA@shadimakers.rwbsgin.mongodb.net/?retryWrites=true&w=majority"
+}

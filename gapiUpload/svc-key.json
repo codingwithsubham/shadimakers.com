@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tactical-hydra-279305",
+  "private_key_id": "04dc0c7cff19202939f3956d6c570e3b342a1771",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4iW7grJyqikms\nk1N8PhICq/YEgm50XTaQByCS2zsv2ZXtcFx+MAX/gwnGLbi80Dw6fGOOw0ZRYSsc\ng8CNsGImMlsv4ZxCjun5cogNQBcpiEDjrx2Cu1T2Ler8SgH0KqDuflL5NcsyJPn8\n7ZAtaJzQrNT+vkMSWEejwUlJIElPb5U2qaqnrcBvJgC0/KZ0QLsWgJ9Of9kK7knH\nLubfb1f3HUTFY0pPaXuZyrR+SUtdhER8gs+E9MoVhUBT8cB4dgg6XHhu5dtuTSvs\nnpvHqJXvjkE/6+XW8oJ+WUoeUg3/srTF/Pwqcyv2rtOmwBMMrBRYXjtg4hkQrJxc\nfgsZl4fbAgMBAAECggEAGDZZY3Dnyg0vQc2Uwx+bxQOjWbp0BqA3qVRzZta39dJy\niamtS8CTpjpJvS8WPEPa2yujSRcrB0DHY3blUVHmwYSS5/3jPu0PGvPMO7zV19UG\nT+QT7FQVqjVNIywMrz4r87mEZn6zOfxAW/oe6YOpK6IO/PD2zkCMqcTnD4lab78H\nBOAWa/mmdlzzlZ8m1y9HbdBog7bOTgRbdfHzfZ5hVfyjwKYp7ZFaB4W6A2uqKV5r\nC/0/uIba/aU8gYx0EJ/ILmlAkVeGsyo8Ze72wU5FRh/egbMfGGV63GpmQnzHswJl\nb0b1GLj0KlynQiicCIrw6KGHz8B8ARv9yeKdzXvVkQKBgQDdf0SRYY/65qTyFLRK\nHqav7oNckGXE+f1ySae8ipAXrU1pPjHMbSs3QIB/6UfGlrCNJuw/857EEUHKyPVH\nn2MCSUGs9Euu8MAu8Aw23uccfy6NM/Z3GFK8isv3K/nWuAnFfT7xtsj/w4B1BRFD\nsOHiD2hO1smTZGlHeApqY86wCwKBgQDVSEjaBH4rJx6FIl89vnzxi4UsMSd1yVIX\nSV2zV7+1qAtbz01mc6D/CiE6lighPBbsPbKYJgmPVSacbQhIcndsY8BslFtTMArn\noqqEsnY0aXUnm418kqyY2wwdkyEWptTegLS9shG4oKgAnmv9+yrQ9bs3YamKlRiR\nYwIS4XhZcQKBgBxLicLYp7/xfti99FoTmE+ZNIa6m4WSOeJDrn3TZZzgsqbjHxFy\nULb6MnAkqNqhnWQquLtir8F0QudYzJydq9Q673zcqF5suuBEIgtQZk2poZTAMpf8\nL3WOdYfZwky/rd/gpA3Uv9CMdPh98TqoefKa7URFA/MkPJ64ovv8TAcJAoGAXii0\naPPU065IjhQ3oeWn+WdUGsd0mU6Q3FD6egPCUitnIFgr3pArwoyxUNEb1FhX8mHm\np78bN1krW6HTJ1DJomODfywcCWTLW6n3x++VudvY6eyFkTqb0jvaZHAhCoQKtFRz\n9s9XfYAHy4YlPRKWu3vQ9Ek8dT8PgpgIQVejLzECgYEA1IPzyPpu2vEeVGJC/lpR\n8cyvfsm9Vhy0ungckJn0Zl2ADGWn0e46wQEjquqKwjcMXt7IhfTbd1JtXFTS0mTc\nFe2l1Mwis6+RYXaDjoKEMGX2+U9Kd75evhOis0wB7fBdlLxfjoiEo9yNKgYemLK7\nVx2/A+cbi2eoJtUEeDDVVxo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "shadimakersimages@tactical-hydra-279305.iam.gserviceaccount.com",
+  "client_id": "111880991385900143658",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shadimakersimages%40tactical-hydra-279305.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
