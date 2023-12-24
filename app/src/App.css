@@ -389,7 +389,7 @@ nav.my-nav .idfy.app-logo {
 }
 
 nav.my-nav {
-  background: linear-gradient(45deg, #e91e63, red);
+  background: linear-gradient(45deg, #e91e63, #F44336);
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -563,11 +563,11 @@ span.blt {
   display: flex;
 }
 
-.row .col {
+.profile-card .row .col {
   padding: 0px 5px;
 }
 
-.card {
+.profile-card .card {
   margin: 5px 0px;
 }
 
@@ -576,14 +576,24 @@ span.blt {
   left: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(45deg, #e91e63, red);
+  background: linear-gradient(45deg, #e91e63, #F44336);
   border-radius: 20px 20px 0px 0px;
 }
 
+.app-content {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 @media only screen and (min-width: 1000px) {
-  .card {
+  .profile-card .row .col {
+    padding: 0px 10px;
+  }
+  
+  .profile-card .card {
     margin: 10px 0px;
   }
+
   .profile-card .card .content span.card-title {
     padding: 0px 20px;
     margin-bottom: 60px;
@@ -591,9 +601,6 @@ span.blt {
   }
   .profile-card .card .content p.card-desc {
     padding: 0px 20px;
-  }
-  .row .col {
-    padding: 0px 10px;
   }
   .nav-wrapper.mob-bttm-bar {
     position: static;
