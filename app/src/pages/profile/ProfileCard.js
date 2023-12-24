@@ -13,6 +13,13 @@ const Profile = ({ profile: { profData } }) => {
                 <span className="card-title">{profData?.info?.name}
                 <i className="material-icons">check_circle</i>
                 </span>
+                <p className="card-desc  hide-on-med-and-down">
+                  {profData?.info?.age}yrs, {profData?.info?.body}cm{' '}
+                  <span className="blt" />
+                  {profData?.info?.religion} <span className="blt" />
+                  {profData?.info?.cast} <br/>
+                  {profData?.info?.city}, {profData?.info?.state}
+                </p>
               </div>
             </div>
           </div>
