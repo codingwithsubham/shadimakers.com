@@ -11,7 +11,7 @@ const Navbar = () => {
     isAuthenticated && (
       <div className="navbar-fixed">
         <nav className="nav-extended my-nav">
-          <div className="nav-wrapper">
+          <div className="nav-wrapper mob-bttm-bar">
             <Link to="#" className="brand-logo">
               <div className="idfy app-logo">
                 Shadi<b>makers.com</b>
@@ -30,7 +30,7 @@ const Navbar = () => {
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <Link to="#">Abount</Link>
+                <Link to="#">About</Link>
               </li>
               <li>
                 <Link to="#">Contact</Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
         )}
         <ul className={`sidenav${openSideNav ? ' open' : ''}`} id="mobile-demo">
           <li>
-            <Link to="#"  onClick={() => setOpenSideNav(false)}>Abount</Link>
+            <Link to="#"  onClick={() => setOpenSideNav(false)}>About</Link>
           </li>
           <li>
             <Link to="#"  onClick={() => setOpenSideNav(false)}>Contact</Link>

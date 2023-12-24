@@ -27,14 +27,7 @@ const Login = () => {
           <h1>Welcome Back</h1>
           <p>Login to your Account</p>
         </div>
-        <div className="frm-nvigt">
-          <Link
-            className="waves-effect waves-light btn-large btn btn-outlined"
-            to="/register"
-          >
-            <i className="material-icons left">cake</i>Sign Up now
-          </Link>
-        </div>
+        
         <div className="frm-body">
           {!loading ? (
             <Form data={loginFormData} callBack={callBack} />

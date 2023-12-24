@@ -20,7 +20,7 @@ router.post('/', auth, async (req, res) => {
 
 router.get('/find', auth, async (req, res) => {
   try {
-    let profiles = await Profile.find({}).skip(req.query?.page * req.query?.limit).limit(req.query?.limit);
+    let profiles = await Profile.find({}).skip(req.query?.page * req.query?.limit).limit(req.query?.limit).sort({_id: -1});
     return res.json(profiles);
   } catch (error) {
     console.log(error);
