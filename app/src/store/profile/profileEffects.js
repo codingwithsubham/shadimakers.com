@@ -5,6 +5,7 @@ import { createProfile, fetching } from '../auth/authSlice';
 import {
   API_ROUTE_PUB,
   CREATE_PROF,
+  GET_PROF,
   GET_PROFS,
 } from '../../common/apiContants';
 import { API_CONFIG } from '../../common/constants';
@@ -37,5 +38,19 @@ export const fetchProfiles = (filter) => async (dispatch) => {
     dispatch(getProfiles(res.data));
   } catch (err) {
     dispatch(displayAlert('Could not fetch Profiles', DANGER));
+  }
+};
+
+// get Profiles
+export const fetchProfileByUser = (user) => async (dispatch) => {
+  try {
+    dispatch(profFetching());
+    const res = await axios.get(
+      `${API_ROUTE_PUB}${GET_PROF}/${user}`,
+      API_CONFIG
+    );
+    return (res.data);
+  } catch (err) {
+    dispatch(displayAlert('Could not fetch Profile', DANGER));
   }
 };

@@ -5,6 +5,7 @@ export const profileSlice = createSlice({
   initialState: {
     profLoading: false,
     profiles: [],
+    profile: null,
   },
   reducers: {
     profFetching: (state) => {
@@ -20,8 +21,15 @@ export const profileSlice = createSlice({
         profiles: payload,
       };
     },
+    getProfileByUser: (state, { payload }) => {
+      return {
+        ...state,
+        profLoading: false,
+        profile: payload,
+      };
+    },
   },
 });
 
-export const { getProfiles, profFetching } = profileSlice.actions;
+export const { getProfiles, profFetching, getProfileByUser } = profileSlice.actions;
 export default profileSlice.reducer;

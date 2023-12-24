@@ -515,11 +515,13 @@ select {
 .profile-card .card .card-image {
   height: 250px;
   object-fit: cover;
+  object-position: top;
 }
 
 .profile-card .card .card-image img {
   height: 250px;
   object-fit: cover;
+  object-position: top;
 }
 
 .profile-card .card .content p.card-desc {
@@ -583,6 +585,58 @@ span.blt {
 .app-content {
   max-width: 100vw;
   overflow: hidden;
+}
+
+.screen {
+  padding-bottom: 70px;
+}
+
+.profile-card.display-head {
+  width: 100%;
+}
+
+.display-head.profile-card .card .content span.card-title {
+  padding: 0px 24px;
+  margin-bottom: 60px;
+}
+
+.display-head.profile-card .card .content p.card-desc {
+  padding: 0px 24px;
+}
+
+.prodile-desc {
+  padding: 0px 10px;
+}
+
+.prodile-desc .content {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 10px;
+}
+
+.prodile-desc .content b {
+  width: 90px;
+}
+
+.prodile-desc .content span {
+  width: 70%;
+  text-align: left;
+}
+
+.action-types {
+  width: -webkit-fill-available;
+}
+
+.action-types .btn-grp {
+  width: -webkit-fill-available;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.action-types .btn-grp button.btn {
+  width: 49%;
 }
 
 @media only screen and (min-width: 768px) {

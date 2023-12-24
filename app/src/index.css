@@ -248,7 +248,7 @@ code {
 }
 
 .c-progress.active:before {
-  animation: i-progress 5s linear forwards;
+  animation: i-progress 3s linear forwards;
 }
 
 @keyframes i-progress {

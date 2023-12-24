@@ -6,4 +6,5 @@ module.exports = {
   FILE_UPLOAD: '/uploads/photos',
   CREATE_PROF: '/profile',
   GET_PROFS: '/profile/find',
+  GET_PROF: '/profile/find',
 };
