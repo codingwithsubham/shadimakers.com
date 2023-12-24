@@ -389,7 +389,7 @@ nav.my-nav .idfy.app-logo {
 }
 
 nav.my-nav {
-  background: linear-gradient(45deg, #e91e63, #F44336);
+  background: #009688;
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -576,7 +576,7 @@ span.blt {
   left: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(45deg, #e91e63, #F44336);
+  background: #009688;
   border-radius: 20px 20px 0px 0px;
 }
 
