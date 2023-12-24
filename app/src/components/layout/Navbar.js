@@ -45,22 +45,22 @@ const Navbar = () => {
           <div className="nav-content">
             <ul className="tabs tabs-transparent">
               <li className="tab">
-                <NavLink to="home">
+                <NavLink exact to="/home">
                   <i className="material-icons">home</i>
                 </NavLink>
               </li>
               <li className="tab">
-                <NavLink to="search">
+                <NavLink exact to="/search">
                   <i className="material-icons">search</i>
                 </NavLink>
               </li>
               <li className="tab">
-                <NavLink to="profile">
+                <NavLink exact to="/profile">
                   <i className="material-icons">person_outline</i>
                 </NavLink>
               </li>
               <li className="tab">
-                <NavLink to="inbox">
+                <NavLink exact to="/inbox">
                   <i className="material-icons">chat_bubble_outline</i>
                 </NavLink>
               </li>

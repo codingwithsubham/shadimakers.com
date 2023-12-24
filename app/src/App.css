@@ -585,22 +585,13 @@ span.blt {
   overflow: hidden;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .profile-card .row .col {
     padding: 0px 10px;
   }
-  
+
   .profile-card .card {
     margin: 10px 0px;
-  }
-
-  .profile-card .card .content span.card-title {
-    padding: 0px 20px;
-    margin-bottom: 60px;
-    font-size: 20px;
-  }
-  .profile-card .card .content p.card-desc {
-    padding: 0px 20px;
   }
   .nav-wrapper.mob-bttm-bar {
     position: static;
@@ -666,5 +657,28 @@ span.blt {
   }
   .img-holder i {
     margin-right: -10px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .profile-card .card .content span.card-title {
+    padding: 10px;
+    margin-bottom: 0px;
+    font-size: 20px;
+  }
+  .profile-card .card .content p.card-desc {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1026px) {
+  .profile-card .card .content span.card-title {
+    padding: 0px 20px;
+    margin-bottom: 60px;
+    font-size: 20px;
+  }
+  .profile-card .card .content p.card-desc {
+    padding: 0px 20px;
+    display: block;
   }
 }
