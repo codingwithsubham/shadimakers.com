@@ -11,7 +11,7 @@ router.post('/photos', auth, uploads.single('myFile'), async (req, res) => {
     }
     const auth = authenticateGoogle();
     const response = await uploadToGoogleDrive(req.file, auth);
-    deleteFile(req.file.path);
+    //deleteFile(req.file.path);
     return res.json(response.data);
   } catch (error) {
     console.log(error);

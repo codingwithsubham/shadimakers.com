@@ -1,5 +1,6 @@
 const { google } = require('googleapis');
 const fs = require('fs');
+const { Readable } = require('stream');
 
 const authenticateGoogle = () => {
   const auth = new google.auth.GoogleAuth({
@@ -16,7 +17,7 @@ const uploadToGoogleDrive = async (file, auth) => {
   };
   const media = {
     mimeType: file.mimetype,
-    body: fs.createReadStream(file.path),
+    body: bufferToStream(file.buffer),
   };
   const driveService = google.drive({ version: 'v3', auth });
   const response = await driveService.files.create({
@@ -32,5 +33,13 @@ const deleteFile = (filePath) => {
     return true;
   });
 };
+
+const bufferToStream = (buffer) => {
+  const stream = new Readable();
+  stream.push(buffer);
+  stream.push(null);
+
+  return stream;
+}
 
 module.exports = { uploadToGoogleDrive, authenticateGoogle, deleteFile };
