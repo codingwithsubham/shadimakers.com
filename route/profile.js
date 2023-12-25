@@ -40,4 +40,37 @@ router.get('/find/:id', auth, async (req, res) => {
   }
 });
 
+//update
+router.post('/update', auth, async (req, res) => {
+  try {
+    let profile = await Profile.findOne({ user: req.user._id });
+    profile.profData = {
+      ...profile.profData,
+      info: req.body
+    }
+    await profile.save();
+    return res.json(profile);
+  } catch (error) {
+    //console.log(error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+//photos
+router.post('/photos', auth, async (req, res) => {
+  try {
+    let profile = await Profile.findOne({ user: req.user._id });
+    profile.profData = {
+      ...profile.profData,
+      imgs: [...profile.profData.imgs, ...req.body]
+    }
+    await profile.save();
+    return res.json(profile);
+  } catch (error) {
+    //console.log(error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 module.exports = router;

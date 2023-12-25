@@ -635,8 +635,31 @@ span.blt {
   justify-content: space-between;
 }
 
-.action-types .btn-grp button.btn {
+.action-types .btn-grp .btn {
   width: 49%;
+}
+
+.profile-editor {
+  padding: 10px;
+}
+
+.photos-upload {
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.profile-photos {
+  padding: 10px;
+  width: -webkit-fill-available;
+  display: block;
+}
+
+.profile-photos .img-wrper {
+  width: 100%;
+}
+
+.profile-photos .img-wrper img {
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {

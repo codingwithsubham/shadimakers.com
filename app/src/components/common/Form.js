@@ -77,7 +77,7 @@ const Form = ({ data, callBack }) => {
               autoComplete={itm?.type === 'password' ? 'current-password' : ''}
               onChange={(e) => handleChange(e, idx)}
             />
-            <label htmlFor={itm?.name}>{itm?.label}</label>
+            <label htmlFor={itm?.name} className={itm?.value !== '' ? 'active' : ''}>{itm?.label}</label>
           </div>
         ) : (
           <div className="input-field col s6" key={idx}>
@@ -91,7 +91,7 @@ const Form = ({ data, callBack }) => {
               autoComplete={itm?.type === 'password' ? 'current-password' : ''}
               onChange={(e) => handleChange(e, idx)}
             />
-            <label htmlFor={itm?.name}>{itm?.label}</label>
+            <label htmlFor={itm?.name} className={itm?.value !== '' ? 'active' : ''}>{itm?.label}</label>
           </div>
         )
       )}

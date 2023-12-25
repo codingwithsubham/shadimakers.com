@@ -12,7 +12,7 @@ const AdSummry = () => {
                   Boost Profile
                 </span>
                 <p>
-                  To get more profile reach, you can create an Ad an run through out the entire application. It's super easy and reliable process from short term.
+                  To get more profile reach, you can create an Ad an run through out the entire application. It's super easy process.
                 </p>
               </div>
               <div className="card-action">

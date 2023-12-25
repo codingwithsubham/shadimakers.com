@@ -2,8 +2,8 @@ import React from 'react';
 import { getImage } from '../../utils/imagebuilder';
 import { Link } from 'react-router-dom';
 
-const Profile = ({ profile }) => {
-  const { profData } = profile;
+const ProfileCard = ({ profile }) => {
+  const profData = profile?.profData;
   return (
     <Link
       className="profile-card"
@@ -36,4 +36,4 @@ const Profile = ({ profile }) => {
   );
 };
 
-export default Profile;
+export default ProfileCard;

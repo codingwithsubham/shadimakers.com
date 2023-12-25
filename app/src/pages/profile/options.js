@@ -30,7 +30,7 @@ export const profileFormData = {
     {
       type: 'formBreak',
       counter: '01',
-      text: "Create a New Profile"
+      text: "Enter Work Details"
     },
     {
       name: 'work',
@@ -62,6 +62,13 @@ export const profileFormData = {
         'Banking',
         'Public Service',
       ]
+    },
+    {
+      name: 'companyName',
+      label: 'Tell us your Company/Business Name',
+      icon: 'work',
+      type: 'text',
+      value: '',
     },
     {
       type: 'formBreak',
@@ -197,8 +204,223 @@ export const profileFormData = {
       name: 'body',
       label: 'My Height',
       icon: 'expand_less',
-      type: 'number',
-      value: '',
+      type: 'text',
+      value: `5'7"`,
     },
   ],
 };
+
+
+export const getEditData = (info) =>  {
+  return {
+    btnText: 'Next',
+    inputs: [
+      {
+        type: 'formBreak',
+        counter: '00',
+        text: "Create a New Profile"
+      },
+      {
+        name: 'name',
+        label: 'Create a display name',
+        icon: 'perm_identity',
+        type: 'text',
+        value: info?.name,
+      },
+      {
+        name: 'gender',
+        label: "I'm a",
+        type: 'radio',
+        value: info?.gender,
+        options: ['Male', 'Female'],
+      },
+      {
+        name: 'lookingfor',
+        label: "I'm looking for a",
+        type: 'radio',
+        value: info?.lookingfor,
+        options: ['Male', 'Female'],
+      },
+      {
+        type: 'formBreak',
+        counter: '01',
+        text: "Enter Work Details"
+      },
+      {
+        name: 'work',
+        label: '',
+        icon: 'work',
+        type: 'select',
+        value: info?.work,
+        options: [
+          'Enter Your Work Details',
+          'Company Job',
+          'Govt. Job',
+          'Business',
+        ]
+      },
+      {
+        name: 'workSector',
+        label: '',
+        icon: 'work',
+        type: 'select',
+        value: info?.workSector,
+        options: [
+          'Enter Your Work Sector',
+          'Education',
+          'IT/Software',
+          'Food',
+          'Goods',
+          'Transport',
+          'Insurance',
+          'Banking',
+          'Public Service',
+        ]
+      },
+      {
+        name: 'companyName',
+        label: 'Tell us your Company/Business Name',
+        icon: 'work',
+        type: 'text',
+        value: info?.companyName,
+      },
+      {
+        type: 'formBreak',
+        counter: '02',
+        text: "Location Details"
+      },
+      {
+        name: 'state',
+        label: '',
+        icon: 'location_searching',
+        type: 'select',
+        value: info?.state,
+        options: [
+          'Which state are you located?',
+          'Andhra Pradesh',
+          'Arunachal Pradesh',
+          'Assam',
+          'Bihar',
+          'Chhattisgarh',
+          'Goa',
+          'Gujarat',
+          'Haryana',
+          'Himachal Pradesh',
+          'Jammu and Kashmir',
+          'Jharkhand',
+          'Karnataka',
+          'Kerala',
+          'Madhya Pradesh',
+          'Maharashtra',
+          'Manipur',
+          'Meghalaya',
+          'Mizoram',
+          'Nagaland',
+          'Odisha',
+          'Punjab',
+          'Rajasthan',
+          'Sikkim',
+          'Tamil Nadu',
+          'Telangana',
+          'Tripura',
+          'Uttarakhand',
+          'Uttar Pradesh',
+          'West Bengal',
+          'Andaman and Nicobar Islands',
+          'Chandigarh',
+          'Dadra and Nagar Haveli',
+          'Daman and Diu',
+          'Delhi',
+          'Lakshadweep',
+          'Puducherry',
+        ],
+      },
+      {
+        name: 'city',
+        label: 'Which city are you located?',
+        icon: 'location_on',
+        type: 'text',
+        value: info?.city,
+      },
+      {
+        type: 'formBreak',
+        counter: '03',
+        text: "My Details"
+      },
+      {
+        name: 'about',
+        label: 'About Me',
+        icon: 'edit',
+        type: 'textarea',
+        value: info?.about,
+      },
+      {
+        name: 'age',
+        label: 'My age',
+        icon: 'code',
+        type: 'number',
+        value: info?.age,
+      },
+      {
+        name: 'religion',
+        label: '',
+        icon: 'filter_list',
+        type: 'select',
+        value: info?.religion,
+        options: [
+          'My Religions',
+          'Hindu',
+          'Muslim',
+          'Christian',
+        ]
+      },
+      {
+        name: 'cast',
+        label: 'My cast',
+        icon: 'filter_hdr',
+        type: 'text',
+        value: info?.cast,
+      },
+      {
+        name: 'subcast',
+        label: 'My sub cast',
+        icon: 'first_page',
+        type: 'text',
+        value: info?.subcast,
+      },
+      {
+        type: 'formBreak',
+        counter: '04',
+        text: "My looks"
+      },
+      {
+        name: 'eyes',
+        label: 'My Eyes color',
+        icon: 'remove_red_eye',
+        type: 'text',
+        value: info?.eyes,
+      },
+      {
+        name: 'hair',
+        label: 'My Hair color',
+        icon: 'color_lens',
+        type: 'text',
+        value: info?.hair,
+      },
+      {
+        name: 'weight',
+        label: 'My Body weight',
+        icon: 'event_seat',
+        type: 'number',
+        value: info?.weight,
+      },
+      {
+        name: 'body',
+        label: 'My Height',
+        icon: 'expand_less',
+        type: 'text',
+        value: info?.body,
+      },
+    ],
+  };  
+}

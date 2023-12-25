@@ -9,6 +9,9 @@ import CreateProfile from '../pages/profile/CreateProfile';
 import SearchIndex from '../pages/search/SearchIndex';
 import { getPathBasedOnSwipe } from '../utils/locationBuilder';
 import ViewProfile from '../pages/profile/ViewProfile';
+import MyProfile from '../pages/profile/MyProfile';
+import EditProfile from '../pages/profile/EditProfile';
+import AddPhotos from '../pages/profile/AddPhotos';
 
 const AppRoutes = () => {
   const [touchStart, setTouchStart] = useState(null);
@@ -54,6 +57,9 @@ const AppRoutes = () => {
           element={<PrivateRoute component={SearchIndex} />}
         />
         <Route exact path="/profile/:id" element={<PrivateRoute component={ViewProfile} />} />
+        <Route exact path="/profile" element={<PrivateRoute component={MyProfile} />} />
+        <Route exact path="/edit-profile" element={<PrivateRoute component={EditProfile} />} />
+        <Route exact path="/add-photos" element={<PrivateRoute component={AddPhotos} />} />
         <Route path="*" element={<Fragment />} />
       </Routes>
     </div>
