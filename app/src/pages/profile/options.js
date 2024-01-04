@@ -43,6 +43,8 @@ export const profileFormData = {
         'Company Job',
         'Govt. Job',
         'Business',
+        'Not Working',
+        'Student',
       ]
     },
     {
@@ -61,6 +63,7 @@ export const profileFormData = {
         'Insurance',
         'Banking',
         'Public Service',
+        'N/A',
       ]
     },
     {
