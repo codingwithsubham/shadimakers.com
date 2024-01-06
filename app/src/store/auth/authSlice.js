@@ -33,6 +33,12 @@ export const authSlice = createSlice({
         profile: payload?.profile,
       };
     },
+    profileUpdated: (state, { payload }) => {
+      return {
+        ...state,
+        profile: payload?.profile,
+      };
+    },
     createProfile: (state, { payload }) => {
       return {
         ...state,
@@ -64,5 +70,5 @@ export const authSlice = createSlice({
   },
 });
 
-export const { login, getUser, authError, fetching, logout, createProfile } = authSlice.actions;
+export const { login, getUser, authError, fetching, logout, createProfile, profileUpdated } = authSlice.actions;
 export default authSlice.reducer;

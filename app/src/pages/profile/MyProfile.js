@@ -6,8 +6,6 @@ const MyProfile = () => {
   const { profile } = useSelector((state) => state.auth);
   const profileData = profile?.profData;
 
-  console.log(profileData);
-
   return <Profile profileData={profileData} isSelf={true}/>;
 };
 

@@ -8,10 +8,12 @@ import ScrollToTop from './utils/ScrollToTop';
 import Alert from './components/layout/Alert';
 import { loadUser } from './store/auth/authEffect';
 import Navbar from './components/layout/Navbar';
+import { connectSocket } from './utils/connectSocket';
 
 function App() {
   useEffect(() => {
     store.dispatch(loadUser());
+    connectSocket();
   }, []);
 
   return (

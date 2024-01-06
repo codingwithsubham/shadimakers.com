@@ -3,7 +3,9 @@ import { DANGER, SUCCESS } from '../../common/appConstants';
 import { displayAlert } from '../alert/alertEffects';
 import { createProfile, fetching } from '../auth/authSlice';
 import {
+  ADD_MATCH,
   API_ROUTE_PUB,
+  APPROVE_MATCH,
   CREATE_PROF,
   GET_PROF,
   GET_PROFS,
@@ -12,6 +14,7 @@ import {
 } from '../../common/apiContants';
 import { API_CONFIG } from '../../common/constants';
 import { getProfiles, profFetching } from './profileSlice';
+import { loadUser } from '../auth/authEffect';
 
 // Create Profile
 export const buildProfile = (body) => async (dispatch) => {
@@ -86,5 +89,35 @@ export const fetchProfileByUser = (user) => async (dispatch) => {
     return (res.data);
   } catch (err) {
     dispatch(displayAlert('Could not fetch Profile', DANGER));
+  }
+};
+
+// request a match
+export const requestMatch = (id) => async (dispatch) => {
+  try {
+    await axios.post(
+      `${API_ROUTE_PUB}${ADD_MATCH}`,
+      {id},
+      API_CONFIG
+    );
+    dispatch(loadUser());
+    dispatch(displayAlert('Match Request Sent', SUCCESS));
+  } catch (err) {
+    dispatch(displayAlert('Can not add to a Match', DANGER));
+  }
+};
+
+// request a match
+export const approveMatch = (id) => async (dispatch) => {
+  try {
+    await axios.post(
+      `${API_ROUTE_PUB}${APPROVE_MATCH}`,
+      {id},
+      API_CONFIG
+    );
+    dispatch(loadUser());
+    dispatch(displayAlert('Match Approved', SUCCESS));
+  } catch (err) {
+    dispatch(displayAlert('Can not approve this Match', DANGER));
   }
 };

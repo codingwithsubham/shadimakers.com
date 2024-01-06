@@ -1,8 +1,60 @@
 import React from 'react';
 import { getImage, getImagebyid } from '../../utils/imagebuilder';
-import { Link } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { approveMatch, requestMatch } from '../../store/profile/profileEffects';
 
 const Profile = ({ profileData, isSelf }) => {
+  const { id } = useParams();
+  const { profile } = useSelector((state) => state.auth);
+  const myProfile = profile?.profData;
+  const dispatch = useDispatch();
+
+  const isMatchedorRequested = () => {
+    if (myProfile?.matchRequests?.includes(id)) {
+      return (
+        <div className="btn-grp fw">
+          <button
+            className="btn waves-effect waves-light green"
+            onClick={() => dispatch(approveMatch(id))}
+          >
+            Approve Match Request
+          </button>
+        </div>
+      );
+    } else if (myProfile?.matchRequested?.includes(id)) {
+      return (
+        <div className="btn-grp fw">
+          <button className="btn waves-effect waves-light" disabled>
+            Match Requested
+          </button>
+        </div>
+      );
+    } else if (myProfile?.matches?.includes(id)) {
+      return (
+        <div className="btn-grp fw">
+          <Link
+            to={`/inbox`}
+            className="btn waves-effect waves-light purple"
+          >
+            Send message
+          </Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="btn-grp fw">
+          <button
+            className="btn waves-effect waves-light"
+            onClick={() => dispatch(requestMatch(id))}
+          >
+            Add a Match
+          </button>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="profile-view insta-an">
       <div className="profile-card display-head">
@@ -30,13 +82,18 @@ const Profile = ({ profileData, isSelf }) => {
         </div>
       </div>
       <div className="action-types">
-        {isSelf ? <div className="btn-grp">
-          <Link to='/edit-profile' className="btn waves-effect waves-light">Edit Profile</Link>
-          <Link to='/add-photos' className="btn waves-effect waves-light">Add Photos</Link>
-        </div> : <div className="btn-grp">
-          <button className="btn waves-effect waves-light">Add a Match</button>
-          <button className="btn waves-effect waves-light">send Message</button>
-        </div>}
+        {isSelf ? (
+          <div className="btn-grp">
+            <Link to="/edit-profile" className="btn waves-effect waves-light">
+              Edit Profile
+            </Link>
+            <Link to="/add-photos" className="btn waves-effect waves-light">
+              Add Photos
+            </Link>
+          </div>
+        ) : (
+          isMatchedorRequested()
+        )}
       </div>
       <div className="prodile-desc">
         <p>

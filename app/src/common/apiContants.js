@@ -9,4 +9,6 @@ module.exports = {
   UPDATE_PHOTOS: '/profile/photos',
   GET_PROFS: '/profile/find',
   GET_PROF: '/profile/find',
+  ADD_MATCH: '/match/add',
+  APPROVE_MATCH: '/match/approve',
 };

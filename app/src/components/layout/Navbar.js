@@ -5,8 +5,12 @@ import { userLogout } from '../../store/auth/authEffect';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const {
+    isAuthenticated,
+    profile,
+  } = useSelector((state) => state.auth);
   const [openSideNav, setOpenSideNav] = useState(false);
+
   return (
     isAuthenticated && (
       <div className="navbar-fixed">
@@ -25,8 +29,13 @@ const Navbar = () => {
             >
               <i className="material-icons">menu</i>
             </Link>
-            <Link to="#" data-target="mobile-demo" className="notifications sidenav-trigger">
-              <i className="material-icons">notifications</i>
+            <Link
+              to="/match-requests"
+              data-target="mobile-demo"
+              className="notifications sidenav-trigger"
+            >
+              <i className="material-icons">supervisor_account</i>
+              <span className="count">{profile?.profData?.matchRequests?.length}</span>
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
@@ -75,13 +84,23 @@ const Navbar = () => {
         )}
         <ul className={`sidenav${openSideNav ? ' open' : ''}`} id="mobile-demo">
           <li>
-            <Link to="#"  onClick={() => setOpenSideNav(false)}>About</Link>
+            <Link to="#" onClick={() => setOpenSideNav(false)}>
+              About
+            </Link>
           </li>
           <li>
-            <Link to="#"  onClick={() => setOpenSideNav(false)}>Contact</Link>
+            <Link to="#" onClick={() => setOpenSideNav(false)}>
+              Contact
+            </Link>
           </li>
           <li>
-            <Link to="#" onClick={() => {dispatch(userLogout()); setOpenSideNav(false)}}>
+            <Link
+              to="#"
+              onClick={() => {
+                dispatch(userLogout());
+                setOpenSideNav(false);
+              }}
+            >
               Logout
             </Link>
           </li>
