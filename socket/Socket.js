@@ -1,5 +1,5 @@
-const User = require('../models/user');
-
+const Profile = require('../models/profile');
+const Chat = require('../models/chat');
 
 const initSocket = (http) => {
   const socketIO = require('socket.io')(http, {
@@ -9,25 +9,44 @@ const initSocket = (http) => {
   });
 
   socketIO.on('connection', async (socket) => {
-    console.log(`⚡: ${socket.id} user just connected!`);
-    const user_id = socket.handshake.query["user_id"];
-
-    if(user_id){
-      await User.findOneAndUpdate({ _id: user_id }, {
-        $set : { isOnline: true }
-      });
+    const user_id = socket.handshake.query['user_id'];
+    //making online
+    if (user_id) {
+      await Profile.findOneAndUpdate(
+        { user: user_id },
+        {
+          $set: { isOnline: true },
+        }
+      );
     }
 
-    socket.on('send_message', (data) => {
-      console.log(data);
-      socketIO.emit('receive_message', data);
+    socket.on('send_message', async (data) => {
+      const new_message = {
+        to: data.to,
+        from: data.from,
+        text: data.message,
+      };
+
+      const res = await Chat.findOneAndUpdate(
+        { _id: data?.conversation_id },
+        {
+          $push: { messages: new_message },
+          $inc: { unread: 1 },
+        },
+        {new: true}
+      ).populate('profiles');
+
+      socketIO.emit('receive_message', res);
     });
 
     socket.on('disconnect', async () => {
-      console.log('🔥: A user disconnected');
-      await User.findOneAndUpdate({ _id: user_id }, {
-        $set : { isOnline: false }
-      });
+      //making offline
+      await Profile.findOneAndUpdate(
+        { user: user_id },
+        {
+          $set: { isOnline: false },
+        }
+      );
     });
   });
 };

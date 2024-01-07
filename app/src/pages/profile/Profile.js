@@ -34,7 +34,7 @@ const Profile = ({ profileData, isSelf }) => {
       return (
         <div className="btn-grp fw">
           <Link
-            to={`/inbox`}
+            to={`/chat/${id}`}
             className="btn waves-effect waves-light purple"
           >
             Send message

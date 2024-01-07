@@ -5,6 +5,7 @@ import { registerFormData } from './options';
 import { useDispatch, useSelector } from 'react-redux';
 import { userRegistration } from '../../store/auth/authEffect';
 import Loader from '../../components/layout/Loader';
+import { connectSocket } from '../../utils/connectSocket';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Register = () => {
   };
 
   if (isAuthenticated) {
+    connectSocket();
     return <Navigate to="/home" />;
   }
 

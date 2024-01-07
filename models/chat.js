@@ -7,6 +7,15 @@ const ChatSchema = new mongoose.Schema({
       ref: "user",
     },
   ],
+  profiles: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "profile",
+    },
+  ],
+  unread: {
+    type: Number,
+  },
   messages: [
     {
       to: {

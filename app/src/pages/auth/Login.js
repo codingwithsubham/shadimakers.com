@@ -5,6 +5,7 @@ import { loginFormData } from './options';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogin } from '../../store/auth/authEffect';
 import Loader from '../../components/layout/Loader';
+import { connectSocket } from '../../utils/connectSocket';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const Login = () => {
   };
 
   if (isAuthenticated) {
+    connectSocket();
     return <Navigate to="/search" />;
   }
 

@@ -6,6 +6,9 @@ const ProfileSchema = new mongoose.Schema({
     ref: 'user',
     require: true,
   },
+  isOnline: {
+    type: Boolean,
+  },
   profData: {
     type: Object,
     require: true

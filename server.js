@@ -20,6 +20,7 @@ app.use('/api/v1/auth', require('./route/auth'));
 app.use('/api/v1/profile', require('./route/profile'));
 app.use('/api/v1/match', require('./route/match'));
 app.use('/api/v1/uploads', require('./route/uploads'));
+app.use('/api/v1/chat', require('./route/chat'));
 // Defining folder static
 app.use('/public', express.static(__dirname + '/uploads'));
 app.use(express.static('app/build'));

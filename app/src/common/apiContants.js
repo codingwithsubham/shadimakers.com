@@ -11,4 +11,6 @@ module.exports = {
   GET_PROF: '/profile/find',
   ADD_MATCH: '/match/add',
   APPROVE_MATCH: '/match/approve',
+  GET_CHAT: '/chat/',
+  GET_CONV: '/chat/get-conversation',
 };

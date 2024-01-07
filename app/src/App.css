@@ -799,6 +799,7 @@ a.prfl-crd-lst {
 
 .chat-hdr.prfle-info p {
   text-transform: capitalize;
+  margin: 0px;
 }
 
 .typing-area {
@@ -845,6 +846,92 @@ form.chat-form button.btn-chat-send i {
 
 form.chat-form input:not(.browser-default):focus:not([readonly]) {
   box-shadow: none !important;
+}
+
+.chat-hdr.prfle-info h3 {
+  font-size: 18px;
+  margin: 0px;
+  text-transform: capitalize;
+}
+
+.chat-itms {
+  display: flex;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  align-items: center;
+}
+
+.chat-itms img {
+  width: 60px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-itms .chat-itm-content {
+  width: -webkit-fill-available;
+}
+
+.chat-itms .chat-itm-content p {
+  text-transform: capitalize;
+  margin: 1px;
+  color: #000;
+  font-size: 10px;
+}
+
+.chat-itms .chat-itm-content p.name {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.chat-body {
+  position: absolute;
+  width: -webkit-fill-available;
+  bottom: 70px;
+  color: #fff;
+  overflow-y: scroll;
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-row.right {
+  display: flex;
+  justify-content: end;
+}
+
+.chat-itm.right {
+  max-width: calc(100% - 20px);
+  background: #009688;
+  margin: 10px 0px 0px;
+  padding: 0px 5px 0px 15px;
+  border-radius: 10px 0px 0px 10px;
+  min-width: 150px;
+}
+
+.chat-itm.left {
+  max-width: calc(100% - 20px);
+  background: #009688;
+  margin: 10px 0px 0px;
+  padding: 0px 5px 0px 15px;
+  border-radius: 0px 10px 10px 0px;
+  min-width: 150px;
+}
+
+.chat-itm p {
+  margin: 4px 0px;
+}
+
+.chat-itm.left p.date {
+  font-size: 8px;
+  text-align: left;
+}
+
+.chat-itm.right p.date {
+  font-size: 8px;
+  text-align: right;
 }
 
 @media only screen and (min-width: 768px) {
