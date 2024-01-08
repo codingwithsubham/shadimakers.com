@@ -1,3 +1,3 @@
-export const getFilter = (page, limit) => {
-    return `page=${page}&limit=${limit}`
+export const getFilter = (search) => {
+    return `search=${search}`
 }

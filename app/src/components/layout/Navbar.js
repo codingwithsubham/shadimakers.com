@@ -5,10 +5,7 @@ import { userLogout } from '../../store/auth/authEffect';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const {
-    isAuthenticated,
-    profile,
-  } = useSelector((state) => state.auth);
+  const { isAuthenticated, profile } = useSelector((state) => state.auth);
   const [openSideNav, setOpenSideNav] = useState(false);
 
   return (
@@ -35,7 +32,12 @@ const Navbar = () => {
               className="notifications sidenav-trigger"
             >
               <i className="material-icons">supervisor_account</i>
-              <span className="count">{profile?.profData?.matchRequests?.length}</span>
+              {profile?.profData?.matchRequests?.length &&
+                profile?.profData?.matchRequests?.length > 0 && (
+                  <span className="count">
+                    {profile?.profData?.matchRequests?.length}
+                  </span>
+                )}
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>

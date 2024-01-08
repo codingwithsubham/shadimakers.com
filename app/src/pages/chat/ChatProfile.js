@@ -1,8 +1,11 @@
 import React from 'react';
 import { getImage } from '../../utils/imagebuilder';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const ChatProfile = ({ profile }) => {
+const ChatProfile = ({ profile, unreadCount, lastMsg }) => {
+  const { user } = useSelector((state) => state.auth);
+
   return !profile ? (
     <div className="prfl-crd-lst">
       <div className="chat-itms">
@@ -22,11 +25,27 @@ const ChatProfile = ({ profile }) => {
       <div className="chat-itms">
         <img src={getImage(profile?.profData)} alt={''} />
         <div className="chat-itm-content">
-          <p className="name">{profile?.profData?.info?.name}</p>
-          <p>
-            {profile?.profData?.info?.city}, {profile?.profData?.info?.state}
+          <p className="name">
+            {profile?.profData?.info?.name}{' '}
+            {profile?.isOnline ? (
+              <span className="online" />
+            ) : (
+              <span className="offline" />
+            )}
+          </p>
+          <p
+            className={`${
+              unreadCount > 0 && lastMsg?.from !== user?._id && 'bold'
+            }`}
+          >
+            {lastMsg?.text}
           </p>
         </div>
+        {unreadCount > 0 && lastMsg?.from !== user?._id && (
+          <span className="new badge blue" data-badge-caption="">
+            {unreadCount}
+          </span>
+        )}
       </div>
     </Link>
   );

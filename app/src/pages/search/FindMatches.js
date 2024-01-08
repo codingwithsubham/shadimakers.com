@@ -8,7 +8,7 @@ import { getFilter } from '../../utils/filterBuilder';
 const FindMatches = () => {
   const dispatch = useDispatch();
   const { profLoading, profiles } = useSelector((state) => state.profile);
-  const [query, setQuery] = useState(getFilter(0, 20));
+  const [query, setQuery] = useState(getFilter(''));
 
   useEffect(() => {
     dispatch(fetchProfiles(query));

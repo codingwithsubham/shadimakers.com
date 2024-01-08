@@ -26,17 +26,24 @@ const initSocket = (http) => {
         from: data.from,
         text: data.message,
       };
-
       const res = await Chat.findOneAndUpdate(
         { _id: data?.conversation_id },
         {
           $push: { messages: new_message },
+          $set: { updated_at: Date.now() },
           $inc: { unread: 1 },
         },
-        {new: true}
+        { new: true }
       ).populate('profiles');
-
       socketIO.emit('receive_message', res);
+    });
+
+    socket.on('conversation_read', async (id) => {
+      await Chat.findOneAndUpdate(
+        { _id: id },
+        { $set: { unread: 0 } },
+        { new: true }
+      ).populate('profiles');
     });
 
     socket.on('disconnect', async () => {

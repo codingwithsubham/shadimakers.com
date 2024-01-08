@@ -16,7 +16,7 @@ const Login = () => {
 
   if (isAuthenticated) {
     connectSocket();
-    return <Navigate to="/search" />;
+    return <Navigate to="/inbox" />;
   }
 
   return (

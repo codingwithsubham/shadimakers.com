@@ -37,7 +37,7 @@ router.get('/:id', auth, async (req, res) => {
     try {
       const chats = await Chat.find({
         participants: { $all: [req.params.id] },
-      }).populate('profiles');
+      }).sort({ updated_at: -1 }).populate('profiles');
   
       return res.json(chats);
     } catch (error) {

@@ -16,6 +16,10 @@ const ChatSchema = new mongoose.Schema({
   unread: {
     type: Number,
   },
+  updated_at: {
+    type: Date,
+    default: Date.now(),
+  },
   messages: [
     {
       to: {

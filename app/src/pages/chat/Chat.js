@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getImage } from '../../utils/imagebuilder';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,19 +9,32 @@ const Chat = ({ socket }) => {
   const dispatch = useDispatch();
   const [conversation, setConversation] = useState(null);
   const { user } = useSelector((state) => state.auth);
+  const [text, setText] = useState('');
 
+  const AlwaysScrollToBottom = () => {
+    const elementRef = useRef();
+    useEffect(() => elementRef.current.scrollIntoView());
+    return <div ref={elementRef} />;
+  };
+  
   useEffect(() => {
     id &&
       user?._id &&
       dispatch(getConversation(user?._id, id)).then((d) => setConversation(d));
   }, [dispatch]);
 
-  const [text, setText] = useState('');
   useEffect(() => {
     socket?.on('receive_message', (data) => {
-      setConversation(data);
+      conversation?._id === data?.conversation_id && setConversation(data);
     });
   }, [socket]);
+
+  useEffect(() => {
+    conversation?._id &&
+      conversation?.messages[conversation?.messages?.length - 1]?.from !==
+        user?._id &&
+      socket?.emit('conversation_read', conversation?._id);
+  }, [conversation]);
 
   const getProfile = () => {
     const profile = conversation?.profiles?.find((x) => x?.user === id);
@@ -52,21 +65,27 @@ const Chat = ({ socket }) => {
             <p>{getProfile()?.isOnline ? 'Online' : 'Offline'}</p>
           </div>
         </div>
-        <div className="chat-body">
+        <div id="cbd" className="chat-body">
           {conversation?.messages?.map((itm, idx) => (
-            <div className={`chat-row${
-              itm?.from !== user?._id ? ' left' : ' right'
-            }`} key={idx}>
+            <div
+              className={`chat-row${
+                itm?.from !== user?._id ? ' left' : ' right'
+              }`}
+              key={idx}
+            >
               <div
                 className={`chat-itm${
                   itm?.from !== user?._id ? ' left' : ' right'
                 }`}
               >
                 <p>{itm?.text}</p>
-                <p className='date'>{new Date(itm?.created_at)?.toLocaleString('en-US')}</p>
+                <p className="date">
+                  {new Date(itm?.created_at)?.toLocaleString('en-US')}
+                </p>
               </div>
             </div>
           ))}
+          <AlwaysScrollToBottom />
         </div>
       </div>
       <div className="typing-area">

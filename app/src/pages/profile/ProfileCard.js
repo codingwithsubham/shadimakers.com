@@ -20,7 +20,7 @@ const ProfileCard = ({ profile }) => {
                   {profData?.info?.name}
                   <i className="material-icons">check_circle</i>
                 </span>
-                <p className="card-desc hide-on-med-and-down">
+                <p className="card-desc">
                   {profData?.info?.age}yrs, {profData?.info?.body}cm{' '}
                   <span className="blt" />
                   {profData?.info?.religion} <span className="blt" />
