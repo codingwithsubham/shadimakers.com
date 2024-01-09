@@ -1,0 +1,6 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.shadimakers.app",
+                 "sha256_cert_fingerprints": ["72:E5:B6:7C:89:44:32:54:E5:FB:16:22:6D:76:58:B0:07:CA:62:B2"] }
+  }]
+  
