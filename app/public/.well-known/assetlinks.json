@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.shadimakers.twa",
-    "sha256_cert_fingerprints": ["39:76:26:80:82:D8:A6:14:4D:1A:33:F2:32:C1:7B:90:66:4C:A7:DB:06:57:F3:24:5D:73:ED:B6:8C:08:43:ED"]
+    "sha256_cert_fingerprints": ["A4:10:F7:AB:E0:D8:E7:A5:C8:37:16:B4:78:21:09:85:D4:96:20:99:24:66:86:DD:72:20:B1:BB:71:1A:98:46"]
   }
 }]
