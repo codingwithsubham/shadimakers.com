@@ -1,6 +1,12 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target" : { "namespace": "android_app", "package_name": "com.shadimakers.app",
-                 "sha256_cert_fingerprints": ["72:E5:B6:7C:89:44:32:54:E5:FB:16:22:6D:76:58:B0:07:CA:62:B2"] }
-  }]
-  
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.shadimakers.twa",
+        "sha256_cert_fingerprints": [
+          "EF:83:3A:EF:CE:34:C0:8C:EA:FE:0A:40:73:13:2C:F7:36:F0:FB:68:73:53:AB:D9:BB:37:BD:98:D3:FD:E5:2B"
+        ]
+      }
+    }
+  ]
