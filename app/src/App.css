@@ -900,7 +900,7 @@ form.chat-form input:not(.browser-default):focus:not([readonly]) {
 
 .chat-row.right {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .chat-itm.right {

@@ -9,11 +9,13 @@ import Alert from './components/layout/Alert';
 import { loadUser } from './store/auth/authEffect';
 import Navbar from './components/layout/Navbar';
 import { connectSocket } from './utils/connectSocket';
+import { initOneSignal } from './utils/oneSignalPushConfig';
 
 function App() {
   useEffect(() => {
     store.dispatch(loadUser());
     connectSocket();
+    initOneSignal();
   }, []);
 
   return (
