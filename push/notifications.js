@@ -4,7 +4,7 @@ const client = new OneSignal.Client(
   'YmYxOTlmNTgtMDliYy00YThkLTgzMTMtMTBjZGM1OGJmMDVi'
 );
 
-const sendNotification = async (title, des, deviceid) => {
+const sendNotification = async (title, des, userid) => {
   const notification = {
     name: title,
     contents: {
@@ -13,14 +13,14 @@ const sendNotification = async (title, des, deviceid) => {
     chrome_web_icon: 'https://cdn-icons-png.flaticon.com/512/7572/7572110.png',
     //chrome_web_image: 'https://cdn-icons-png.flaticon.com/512/7572/7572110.png',
     chrome_web_badge: 'https://cdn-icons-png.flaticon.com/512/7572/7572110.png',
-    //included_segments: ['Total Subscriptions'],
-    include_aliases: { external_id: [deviceid] },
+    included_segments: ['Active Subscriptions'],
+    include_aliases: { external_id: [userid] },
     target_channel: 'push',
   };
 
   try {
     const response = await client.createNotification(notification);
-    //console.log(response.body);
+    console.log(response.body);
   } catch (e) {
     if (e instanceof OneSignal.HTTPError) {
      // console.log(e.statusCode);
@@ -33,8 +33,9 @@ const registerADevice = async (id) => {
   const response = await client.addDevice({
     device_type: 5,
     identifier: id,
+    external_user_id: id,
   });
-  //console.log(response.body);
+  console.log(response.body);
 };
 
 module.exports = { sendNotification, registerADevice };
