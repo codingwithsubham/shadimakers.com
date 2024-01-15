@@ -5,7 +5,6 @@ const client = new OneSignal.Client(
 );
 
 const sendNotification = async (title, des, userid) => {
-  console.log(userid);
   const notification = {
     name: title,
     contents: {
