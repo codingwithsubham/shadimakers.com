@@ -1,5 +1,6 @@
 const Profile = require('../models/profile');
 const Chat = require('../models/chat');
+const { sendNotification, registerADevice } = require('../push/notifications');
 
 const initSocket = (http) => {
   const socketIO = require('socket.io')(http, {
@@ -12,6 +13,7 @@ const initSocket = (http) => {
     const user_id = socket.handshake.query['user_id'];
     //making online
     if (user_id) {
+      await registerADevice(user_id);
       await Profile.findOneAndUpdate(
         { user: user_id },
         {
@@ -35,6 +37,7 @@ const initSocket = (http) => {
         },
         { new: true }
       ).populate('profiles');
+      await sendNotification('Shadimakers.com', 'A new message', data.to);
       socketIO.emit('receive_message', res);
     });
 
