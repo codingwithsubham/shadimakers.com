@@ -5,26 +5,26 @@ const client = new OneSignal.Client(
 );
 
 const sendNotification = async (title, des, userid) => {
+  console.log(userid);
   const notification = {
     name: title,
     contents: {
       en: des,
     },
     chrome_web_icon: 'https://cdn-icons-png.flaticon.com/512/7572/7572110.png',
-    //chrome_web_image: 'https://cdn-icons-png.flaticon.com/512/7572/7572110.png',
     chrome_web_badge: 'https://cdn-icons-png.flaticon.com/512/7572/7572110.png',
-    included_segments: ['Active Subscriptions'],
+    filters: [{ field: 'tag', key: 'banned', relation: '!=', value: 'true' }],
     include_aliases: { external_id: [userid] },
     target_channel: 'push',
   };
 
   try {
     const response = await client.createNotification(notification);
-    console.log(response.body);
+    //console.log(response.body);
   } catch (e) {
     if (e instanceof OneSignal.HTTPError) {
-     // console.log(e.statusCode);
-    // console.log(e.body);
+      // console.log(e.statusCode);
+      // console.log(e.body);
     }
   }
 };
@@ -35,7 +35,7 @@ const registerADevice = async (id) => {
     identifier: id,
     external_user_id: id,
   });
-  console.log(response.body);
+  // console.log(response.body);
 };
 
 module.exports = { sendNotification, registerADevice };
