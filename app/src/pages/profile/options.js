@@ -68,9 +68,16 @@ export const profileFormData = {
     },
     {
       name: 'companyName',
-      label: 'Tell us your Company/Business Name',
+      label: 'Company/Business Name',
       icon: 'work',
       type: 'text',
+      value: '',
+    },
+    {
+      name: 'annualIncome',
+      label: 'Annula Income',
+      icon: 'work',
+      type: 'number',
       value: '',
     },
     {
@@ -167,13 +174,6 @@ export const profileFormData = {
       name: 'cast',
       label: 'My cast',
       icon: 'filter_hdr',
-      type: 'text',
-      value: '',
-    },
-    {
-      name: 'subcast',
-      label: 'My sub cast',
-      icon: 'first_page',
       type: 'text',
       value: '',
     },
