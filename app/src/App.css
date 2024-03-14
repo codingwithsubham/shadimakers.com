@@ -588,7 +588,6 @@ span.blt {
   max-width: 100vw;
   overflow: hidden;
   padding-bottom: 70px;
-
 }
 
 .profile-card.display-head {
@@ -662,7 +661,7 @@ span.blt {
   width: 100%;
 }
 
-.action-types .btn-grp.fw  .btn {
+.action-types .btn-grp.fw .btn {
   width: 100%;
 }
 
@@ -703,7 +702,9 @@ nav .sidenav-trigger span.count {
   font-size: 13px;
 }
 
-.prfl-crd-lst p.infos {float: inline-start;}
+.prfl-crd-lst p.infos {
+  float: inline-start;
+}
 
 .prfl-crd-lst p.infos span.new.badge {
   margin-left: 0px;
@@ -713,7 +714,7 @@ nav .sidenav-trigger span.count {
 
 .prfl-crd-lst p.name i {
   font-size: 15px;
-  color: #4CAF50;
+  color: #4caf50;
   margin: 0px 5px;
 }
 
@@ -828,7 +829,7 @@ form.chat-form input {
 }
 
 form.chat-form button.btn-chat-send {
-  background: #2196F3;
+  background: #2196f3;
   outline: none !important;
   border: none;
   color: #fff;
@@ -943,7 +944,7 @@ span.online {
   width: 10px;
   display: inline-block;
   height: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border-radius: 50%;
 }
 
@@ -962,6 +963,35 @@ span.offline {
 }
 
 @media only screen and (min-width: 768px) {
+  .profile-view .prodile-desc {
+    width: 50%;
+  }
+
+  .profile-view .profile-photos {
+    width: 50%;
+  }
+
+  .profile-view {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .profile-view .profile-card.display-head {
+    width: 70%;
+  }
+
+  .profile-view .action-types {
+    width: 30%;
+  }
+
+  .profile-view .action-types .btn-grp {
+    flex-wrap: wrap;
+  }
+
+  .profile-view .action-types .btn-grp a.btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   .profile-card .row .col {
     padding: 0px 10px;
   }
